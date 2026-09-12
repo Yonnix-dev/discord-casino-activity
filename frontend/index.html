@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casino Activity</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@discord/embedded-app-sdk@1.0.0/dist/embedded-app.umd.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎰 Casino</h1>
+      <div class="balance">
+        <span>Solde:</span>
+        <span id="balance">0</span> 💰
+      </div>
+    </header>
+
+    <div class="games">
+      <div class="game-card" onclick="selectGame('blackjack')">
+        <div class="game-icon">🃏</div>
+        <h3>Blackjack</h3>
+        <p>Battez le croupier</p>
+      </div>
+
+      <div class="game-card" onclick="selectGame('roulette')">
+        <div class="game-icon">🎡</div>
+        <h3>Roulette</h3>
+        <p>Misez sur un numéro</p>
+      </div>
+    </div>
+
+    <div id="game-area" class="game-area hidden">
+      <h2 id="game-title">Blackjack</h2>
+      
+      <div class="bet-controls">
+        <input type="number" id="bet-amount" placeholder="Montant" min="1">
+        <button onclick="placeBet()">Parier</button>
+      </div>
+
+      <div id="game-content"></div>
+
+      <button class="back-btn" onclick="backToMenu()">← Retour</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GG Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.balance {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  background: rgba(67, 233, 123, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(67, 233, 123, 0.3);
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.game-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.game-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.game-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.game-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.game-area {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-area h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bet-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bet-controls input {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.bet-controls button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.bet-controls button:hover {
+  transform: scale(1.05);
+}
+
+#game-content {
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Cards pour Blackjack */
+.cards {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  width: 60px;
+  height: 90px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+/* Roulette */
+.roulette-wheel {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff0000 0deg 18deg,
+    #000000 18deg 36deg,
+    #ff0000 36deg 54deg,
+    #000000 54deg 72deg,
+    #ff0000 72deg 90deg,
+    #000000 90deg 108deg,
+    #ff0000 108deg 126deg,
+    #000000 126deg 144deg,
+    #ff0000 144deg 162deg,
+    #000000 162deg 180deg,
+    #ff0000 180deg 198deg,
+    #000000 198deg 216deg,
+    #ff0000 216deg 234deg,
+    #000000 234deg 252deg,
+    #ff0000 252deg 270deg,
+    #000000 270deg 288deg,
+    #ff0000 288deg 306deg,
+    #000000 306deg 324deg,
+    #ff0000 324deg 342deg,
+    #000000 342deg 360deg
+  );
+  margin: 20px auto;
+  border: 4px solid #gold;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.result.win {
+  background: rgba(67, 233, 123, 0.2);
+  color: #43eb7b;
+}
+
+.result.lose {
+  background: rgba(245, 87, 108, 0.2);
+  color: #f5576c;
+}
